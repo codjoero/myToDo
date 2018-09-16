@@ -1,9 +1,7 @@
-body{
-    background-image: url(../static/background.jpeg);
+html{
+    background: url(../static/background.jpeg) no-repeat center center fixed;
     height: 100vh;
     background-size: cover;
-    background-position: center;
-    
 }
 
 .login-page{
