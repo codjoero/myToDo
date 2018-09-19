@@ -1,0 +1,51 @@
+* {box-sizing: border-box;}
+
+body {
+    margin: 0;
+    font-family: "Roboto", "Arial", "Helvetica", "sans-serif";
+    background-color: #d3edec;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #86d8d6;
+}
+
+.topnav #logo{
+    width: 80%;
+    font-size: 30px;
+    color: #888170;
+    margin: auto;
+}
+input{
+    float: right;
+    width: 200px;
+    margin-right: 30px;
+    margin-top: 0px;
+    position: static;
+}
+.topnav .sexy{
+    font: 60px Angelina, Brush script mt, Georgia, Arial, Helvetica, sans-serif;
+}
+
+.topnav .search-container {
+    float: left;
+}
+
+.topnav .search-container input[type=text] {
+    padding: 15px;
+    margin-top: 0px;
+    font-size: 17px;
+    border: none;
+}
+
+
+.search-container button {
+    float: right;
+    padding: 15px 10px;
+    margin-top: 0px;
+    background: #ddd;
+    font-size: 17px;
+    border: none;
+    cursor: pointer;
+}
