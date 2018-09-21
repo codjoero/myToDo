@@ -92,6 +92,7 @@ ul {
 }
 #myLists{
     margin-top: 50px;
+    
 }
 
 #myLists li{
@@ -106,7 +107,7 @@ ul {
 
 #myLists li:nth-child(odd) {
     background: #dbfdfd;
-  }
+}
 
 #myLists li:hover{
     background: #ddd;
@@ -146,8 +147,86 @@ input{
     border-radius: 0;
     transition: 0.3s;
     width: 18%
-  }
+}
   
-  .addBtn:hover {
+.addBtn:hover {
     background-color: #bbb;
-  }
+}
+.popup{
+
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    height:18em;
+    margin-top: -9em;
+    margin-left: -15em;
+    z-index: 1;
+    float: right;
+    overflow: auto;
+    background-color: rgb(185,226,224); 
+    background-color: rgba(185,226,224,0.8);
+ 
+}
+
+.popup-content {
+    width: 97%; /* Could be more or less, depending on screen size */
+
+}
+
+#popupInput{
+    margin-top: 0;
+    border: none;
+    border-radius: 0;
+    float: left;
+    font-size: 16px;
+    width: 65%;
+}
+
+.popupaddBtn{
+    background: #b9e2e0;
+    color: #555;
+    float: left;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 0;
+    transition: 0.3s;
+    width: 18%
+}
+
+.popupaddBtn:hover {
+    background-color: #bbb;
+}
+
+#myItems li{
+    cursor: pointer;
+    position: relative;
+    padding: 8px 8px 8px 40px;
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+#myItems{
+    padding-top: 50px;
+}
+
+#myItems li:nth-child(odd) {
+    background: rgb(193, 226, 225);
+}
+
+/* The Close Button */
+.popupclose {
+    float: right;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.popupclose:hover,
+.popupclose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
