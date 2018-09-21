@@ -9,7 +9,6 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Todo Lists | Home</title>
         <link rel="stylesheet" type="text/css" media="screen" href="../static/styleHomepage.css" />
-        <script src="../static/homepage.js"></script>
     </head>
     <body>
         <header>
@@ -53,14 +52,53 @@
                         <span onclick="newElement()" class="addBtn">Add</span>  
                     </div>
                     <ul id="myLists">
-                        <li>Shopping</li>
-                        <li>Dance Lessons</li>
-                        <li>Back to School</li>
-                        <li>Budget</li>
+                        <li>Shopping<span class="close">&times;</span></li>
+                        <li>Dance Lessons<span class="close">&times;</span></li>
+                        <li>Back to School<span class="close">&times;</span></li>
+                        <li>Budget<span class="close">&times;</span></li>
                     </ul>
                 </div>
             </div>
         </section>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script type="text/javascript" src="../static/homepage.js"></script>
 
+        <script>
+            var closebtns = document.getElementsByClassName("close");
+            var i;
+            
+            for (i = 0; i < closebtns.length; i++) {
+              closebtns[i].addEventListener("click", function() {
+                this.parentElement.style.display = 'none';
+              });
+            }
+
+            // Create a new list item when clicking on the "Add" button
+            function newElement() {
+            var li = document.createElement("li");
+            var inputValue = document.getElementById("listsInput").value;
+            var t = document.createTextNode(inputValue);
+            li.appendChild(t);
+            if (inputValue === '') {
+                alert("Please Add a List name!");
+            } else {
+                document.getElementById("myLists").appendChild(li);
+            }
+            document.getElementById("listsInput").value = "";
+
+            var span = document.createElement("SPAN");
+            var txt = document.createTextNode("\u00D7");
+            span.className = "close";
+            span.appendChild(txt);
+            li.appendChild(span);
+
+            for (i = 0; i < closebtns.length; i++) {
+              closebtns[i].addEventListener("click", function() {
+                this.parentElement.style.display = 'none';
+              });
+            }
+            }
+        </script>
     </body>
-</html>
+    
+    </html>
