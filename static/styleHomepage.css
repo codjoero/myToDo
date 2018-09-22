@@ -1,4 +1,3 @@
-
 body {
     margin: 0;
     padding: 0;
@@ -13,6 +12,11 @@ body {
     overflow: hidden;
 }
 
+ul {
+    margin: 0;
+    padding: 0;
+}
+
 /*Header*/
 header{
     background: #b9e2e0;
@@ -23,28 +27,44 @@ header h1{
     float: left;   
 }
 
+#branding{
+    margin: auto;
+    overflow: visible;
+    font-size: 15px;
+    color: #888170;
+}
+
+header .sexy{
+    font: 60px Angelina, Brush script mt, Georgia, Arial, Helvetica, sans-serif;
+}
+
 header form{
     float: right;
     margin-top: 23px;
-    width: 70%;
-    
+    width: 70%;  
 }
 
 header input{
     padding: 5px;
     height: 35px;
-    width: 500px;
+    width: 70%;
     border: none;
     font-size: 17px;
-    background: #d3edec;
+    background: rgba(211,237,236,0.6);
 }
 
-.search{
+header form button{
     height: 45px;
-    background: #d3edec;
+    background: rgba(211,237,236,0.6);
     border: none;
     padding-left: 20px;
     padding-right: 20px;
+    float: left;
+    width: 10%;
+    padding: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    color: #888170;
 }
 
 .profile{
@@ -82,14 +102,54 @@ header input{
 
 /*lists*/
 #listsBody{
-    float: right;
+    position: relative;
+    left: 10%;
+    float: left;
+    margin: auto;
+    width:60%;
+}
+
+/*lists input*/
+form #listsInput{
+    border: none;
+    border-radius: 0;
+    float: left;
+    height: 23px;
+    padding: 10px;
+    font-size: 17px;
+    color: #555;
     width: 70%;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
+/*addBtn*/
+form .addBtn{
+    background: #b9e2e0;
+    color: #555;
+    float: left;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+    border: none;
+    border-radius: 0;
+    transition: 0.3s;
+    width: 10%
 }
+  
+.addBtn:hover {
+    background-color: #bbb;
+}
+
+.active, .collapsible:hover {
+    background-color: #555;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+}
+
 #myLists{
     margin-top: 50px;
     
@@ -123,110 +183,4 @@ ul {
 .close:hover{
     background-color: #bbb;
     color: white;
-}
-
-/*lists input*/
-input{
-    border: none;
-    border-radius: 0;
-    padding: 12.5px;
-    float: left;
-    font-size: 16px;
-    width: 76%;
-}
-
-/*addBtn*/
-.addBtn{
-    background: #b9e2e0;
-    color: #555;
-    float: left;
-    padding: 10px;
-    cursor: pointer;
-    text-align: center;
-    font-size: 16px;
-    border-radius: 0;
-    transition: 0.3s;
-    width: 18%
-}
-  
-.addBtn:hover {
-    background-color: #bbb;
-}
-.popup{
-
-    position:fixed;
-    top: 50%;
-    left: 50%;
-    width:30em;
-    height:18em;
-    margin-top: -9em;
-    margin-left: -15em;
-    z-index: 1;
-    float: right;
-    overflow: auto;
-    background-color: rgb(185,226,224); 
-    background-color: rgba(185,226,224,0.8);
- 
-}
-
-.popup-content {
-    width: 97%; /* Could be more or less, depending on screen size */
-
-}
-
-#popupInput{
-    margin-top: 0;
-    border: none;
-    border-radius: 0;
-    float: left;
-    font-size: 16px;
-    width: 65%;
-}
-
-.popupaddBtn{
-    background: #b9e2e0;
-    color: #555;
-    float: left;
-    padding: 10px;
-    cursor: pointer;
-    text-align: center;
-    font-size: 16px;
-    border-radius: 0;
-    transition: 0.3s;
-    width: 18%
-}
-
-.popupaddBtn:hover {
-    background-color: #bbb;
-}
-
-#myItems li{
-    cursor: pointer;
-    position: relative;
-    padding: 8px 8px 8px 40px;
-    font-size: 18px;
-    transition: 0.2s;
-}
-
-#myItems{
-    padding-top: 50px;
-}
-
-#myItems li:nth-child(odd) {
-    background: rgb(193, 226, 225);
-}
-
-/* The Close Button */
-.popupclose {
-    float: right;
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.popupclose:hover,
-.popupclose:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }

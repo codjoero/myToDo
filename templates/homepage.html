@@ -9,6 +9,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Todo Lists | Home</title>
         <link rel="stylesheet" type="text/css" media="screen" href="../static/styleHomepage.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <header>
@@ -18,7 +19,7 @@
                 </div>
                 <form>
                     <input type="text" placeholder="Search..">
-                    <button type="submit" class="search">Search</button>
+                    <button type="submit"><i class="fa fa-search"></i></button>
                     <h3 class = "profile"> Ronald</h3>
                 </form>
                 
@@ -47,37 +48,38 @@
                     </div>
                 </aside>
                 <div id="listsBody">
-                    <div class="listsHeader">
+                    <form class="listsHeader">
                         <input type="text" id="listsInput" placeholder="Title...">
                         <span onclick="newElement()" class="addBtn">Add</span>  
-                    </div>
+                    </form>
                     <ul id="myLists">
-                        <li>Shopping</a><span class="close">&times;</span></li>
-                        <li>Dance Lessons</a><span class="close">&times;</span></li>
-                        <li>Back to School</a><span class="close">&times;</span></li>
-                        <li>Budget</a><span class="close">&times;</span></li>
+                        <li class="collapsible">Shopping<span class="close">&times;</span></li>
+                        <div class="content">
+                            <p>- Milk</p>
+                            <p>- Bread</p>
+                            <p>- Sugar</p>
+                        </div>
+                        <li class="collapsible">Dance Lessons<span class="close">&times;</span></li>
+                        <div class="content">
+                            <p>- Directions</p>
+                        </div>
+                        <li class="collapsible">Back to School<span class="close">&times;</span></li>
+                        <div class="content">
+                            <p>- Uniform</p>
+                            <p>- Books</p>
+                        </div>
+                        <li class="collapsible">Budget<span class="close">&times;</span></li>
+                        <div class="content">
+                            <p>- Gas</p>
+                            <p>- Fees</p>
+                            <p>- Shopping</p>
+                            <p>- Outing</p>
+                        </div>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <!-- The Lists popup -->
-        <div id="popupBody" class="popup">
-            <div class="popup-content">
-                <span class="popupclose">&times;</span>
-                <div class="popupHeader">
-                    <input type="text" id="popupInput" placeholder="Item...">
-                    <span onclick="newElement()" class="popupaddBtn">Add</span>  
-                </div>
-                <ul id="myItems">
-                    <li>Bread</span></li>
-                    <li>Milk</span></li>
-                </ul>
-            </div>
-        </div>
-
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script type="text/javascript" src="../static/homepage.js"></script>
         <script>
             var closebtns = document.getElementsByClassName("close");
             var i;
@@ -113,23 +115,19 @@
             }
             }
 
-            // Popup Lists
-            var modal = document.getElementById('popupBody');
-          //var btn = document.getElementsById("myLists");
-            var span = document.getElementsByClassName("popupclose")[0]
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
 
-            btn.onclick = function() {
-                modal.style.display = "block";
-            }
-
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
+            for (i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content = this.nextElementSibling;
+                    if (content.style.display === "block") {
+                    content.style.display = "none";
+                    } else {
+                    content.style.display = "block";
+                    }
+                });
             }
         </script>
     </body>
