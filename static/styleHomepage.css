@@ -141,7 +141,7 @@ form .addBtn{
 }
 
 .active, .collapsible:hover {
-    background-color: #555;
+    background-color: rgb(116, 116, 116);
 }
 
 .content {
