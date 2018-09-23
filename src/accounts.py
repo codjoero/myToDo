@@ -16,9 +16,9 @@ def add_account(name, password):
 def login(name, password):
     """
     returns true if the password and corresponding name exist in the 
-    accounts dicitionary
+    accounts dictionary
     """
-    if accounts[password] is name:
+    for key in accounts and 'value' == accounts[key]:
         return True
     else:
         return False
